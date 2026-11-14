@@ -1,0 +1,820 @@
+# MASTER APP DEVELOPMENT PROMPT — SPENDSENSE AI
+
+## 1. PROJECT OVERVIEW
+
+Build a fully functional, modern, responsive personal finance web application called **SpendSense AI**.
+
+**Tagline:** "Your Money. Your Decisions. Your Financial Future."
+
+SpendSense AI is an AI-powered personal financial planning and decision-making platform. Its purpose is to help users understand how to distribute their monthly income, build savings, create an emergency fund, plan travel, achieve financial goals, and make smarter financial decisions.
+
+This is NOT a traditional expense tracker.
+
+The primary differentiator is an intelligent **AI Financial Decision Agent** that acts like a personal financial strategist. Users can ask it questions such as:
+
+- Should I buy a car?
+- Can I afford a ₹15,000 purchase?
+- Should I move into a more expensive apartment?
+- Can I afford an international trip?
+- Should I purchase something on EMI?
+- Am I saving enough?
+- How should I divide my monthly salary?
+- What will my financial situation look like after three years?
+- Should I prioritise saving, travelling or achieving a particular goal?
+
+The AI should understand the user's financial profile, perform calculations, compare scenarios, identify risks and provide personalised recommendations.
+
+The application must be extremely easy to use, visually attractive, intuitive and beginner-friendly. Do not overwhelm users with unnecessary financial terminology, complicated charts or excessive features.
+
+The experience should feel like having a personal AI financial assistant.
+
+---
+
+# 2. CORE PRODUCT PHILOSOPHY
+
+Build the product around three main principles:
+
+1. **Simple money management:** Users should only need to enter their monthly income to receive an initial financial allocation.
+2. **Intelligent financial planning:** The application should automatically calculate how much money should go towards different financial categories.
+3. **AI-powered decision-making:** The AI agent should help users evaluate real-life financial decisions using their actual financial information.
+
+The user should NOT be required to:
+- Connect a bank account.
+- Provide bank login credentials.
+- Upload bank statements.
+- Upload transaction histories.
+- Manually enter every expense.
+- Understand complicated financial formulas.
+
+The main experience must work with only manually entered monthly income.
+
+Additional information can be collected optionally when a user wants more personalised recommendations.
+
+---
+
+# 3. DESIGN AND USER EXPERIENCE
+
+Create a premium fintech-style interface.
+
+### Visual direction
+
+The application should look like a modern financial technology startup, not a traditional banking website.
+
+Use:
+- Clean layouts.
+- Generous white space.
+- Rounded cards.
+- Soft shadows.
+- Minimal icons.
+- Clear typography.
+- Elegant charts.
+- Subtle animations.
+- Smooth transitions.
+- Consistent spacing.
+
+### Suggested colour palette
+
+- Primary: Deep navy (#14213D).
+- Secondary: Emerald green (#18A878).
+- Background: Very light grey (#F7F9FC).
+- Cards: White.
+- Positive indicators: Green.
+- Warning indicators: Amber.
+- Negative indicators: Muted red.
+- Text: Dark charcoal.
+
+Use a clean modern font such as Inter.
+
+Avoid:
+- Overly bright colours.
+- Cluttered dashboards.
+- Too many graphs.
+- Excessive animations.
+- Tiny text.
+- Complicated navigation.
+- A generic chatbot interface.
+
+The AI assistant should have its own distinctive visual identity and should feel like an integral part of the application.
+
+### Responsive design
+
+The website must work smoothly on:
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+Use a responsive sidebar on desktop and a simple mobile navigation pattern.
+
+---
+
+# 4. USER ONBOARDING
+
+Make onboarding extremely simple.
+
+On the first screen, display:
+
+"Let's make your money work smarter."
+
+Subtitle:
+
+"Tell us your monthly income. We'll help you create a financial plan that works for your lifestyle and goals."
+
+The user should enter:
+
+**Required field:**
+- Monthly income in INR.
+
+Example: ₹60,000.
+
+Provide an optional advanced personalisation section for:
+- Monthly rent.
+- Existing monthly debt or EMI commitments.
+- Current emergency fund balance.
+- Existing savings.
+- Financial goals.
+- Expected major expenses.
+
+These fields must remain optional. Do not block the user from generating an allocation if they only enter their income.
+
+After the user enters their income, automatically generate their financial allocation.
+
+Include a clear option to edit their monthly income later.
+
+Do not ask for bank account information or transaction uploads.
+
+---
+
+# 5. SMART INCOME ALLOCATION ENGINE
+
+This is one of the core features.
+
+Create a deterministic Smart Allocation Engine that automatically divides the user's monthly income into sensible financial categories.
+
+The default allocation should be configurable and editable.
+
+Use the following illustrative default distribution:
+
+| Category | Percentage |
+|---|---:|
+| Essentials | 45% |
+| Emergency Fund | 10% |
+| Savings | 20% |
+| Travel Fund | 10% |
+| Financial Goals | 5% |
+| Lifestyle | 10% |
+| Total | 100% |
+
+IMPORTANT: These are illustrative starting percentages, not universal financial recommendations. The application must allow the user to customise them.
+
+### Example calculation
+
+If the user enters a monthly income of ₹60,000, display:
+
+- Essentials: ₹27,000.
+- Emergency Fund: ₹6,000.
+- Savings: ₹12,000.
+- Travel Fund: ₹6,000.
+- Financial Goals: ₹3,000.
+- Lifestyle: ₹6,000.
+
+Total: ₹60,000.
+
+### Allocation requirements
+
+The allocation engine must:
+
+1. Calculate the amount assigned to each category.
+2. Calculate the percentage assigned to each category.
+3. Ensure that all allocations add up to exactly 100%.
+4. Ensure that the total rupee allocation equals monthly income.
+5. Recalculate instantly if income changes.
+6. Allow users to edit category percentages.
+7. Automatically adjust the remaining categories when percentages are edited, or clearly ask the user to rebalance them.
+8. Never allow an allocation total greater or less than 100% without displaying a clear warning.
+
+Display the allocations through:
+- A beautiful doughnut chart.
+- Individual category cards.
+- Percentage indicators.
+- Rupee amounts.
+- A clear total monthly allocation.
+
+### Intelligent allocation logic
+
+Do not simply hardcode the same allocation for every possible user.
+
+Start with the default distribution, but allow the engine to make suggestions based on optional information.
+
+For example:
+- If rent and essential expenses exceed the default allocation, suggest increasing the essentials percentage.
+- If the emergency fund is below its selected target, suggest prioritising emergency contributions.
+- If the user has an important upcoming financial goal, suggest adjusting the goals allocation.
+- If the user has existing EMI commitments, consider them when evaluating affordability.
+
+Never silently change a user's allocation. Explain the proposed adjustment and let the user approve it.
+
+---
+
+# 6. MAIN DASHBOARD
+
+After onboarding, show a beautiful personalised dashboard.
+
+At the top, display:
+
+"Good morning! Here's your financial overview."
+
+Include:
+
+### Financial overview cards
+
+1. Monthly Income.
+2. Total Essentials Allocation.
+3. Monthly Savings.
+4. Emergency Fund Contribution.
+5. Travel Fund.
+6. Financial Goals Contribution.
+
+### Main dashboard visualisations
+
+- Monthly income allocation doughnut chart.
+- Financial category breakdown.
+- Annual savings projection.
+- Emergency fund progress.
+- Financial goals progress.
+- Travel fund progress.
+
+### AI insight section
+
+Display personalised insights such as:
+
+"You're allocating 20% of your monthly income towards savings. At this rate, you could allocate ₹1,44,000 towards savings over the next 12 months, assuming your income and contributions remain unchanged."
+
+"Your travel fund receives ₹6,000 per month. You could accumulate ₹36,000 in six months."
+
+All projections must be calculated using actual user data.
+
+Clearly distinguish projections from guaranteed outcomes.
+
+Include a prominent button:
+
+**"Ask Your AI Financial Agent"**
+
+---
+
+# 7. EMERGENCY FUND PLANNER
+
+Create a dedicated emergency fund section.
+
+The application should explain why emergency savings matter.
+
+Allow users to:
+- Enter their estimated monthly essential expenses optionally.
+- Select an emergency fund target, such as 3, 6 or 9 months of essential expenses.
+- View their target amount.
+- Enter their current emergency fund balance.
+- View how much they need to save.
+- See the estimated time required to reach their target.
+- See their monthly contribution.
+
+Example:
+
+If monthly essential expenses are ₹25,000 and the selected target is six months:
+
+Emergency fund target = ₹1,50,000.
+
+If the user already has ₹30,000:
+
+Remaining amount = ₹1,20,000.
+
+At a monthly contribution of ₹6,000:
+
+Estimated time to target = 20 months.
+
+Use clear progress bars and simple explanations.
+
+Do not assume that monthly income is the same as essential expenses. If essential expenses are unknown, explain that the emergency fund estimate is provisional.
+
+---
+
+# 8. FINANCIAL GOALS PLANNER
+
+Create a small, simple financial goals section.
+
+Allow users to add goals such as:
+- Buy a laptop.
+- Buy a car.
+- Save for higher education.
+- Build a house deposit.
+- Save for a wedding.
+- Start a business.
+- Purchase something important.
+
+For each goal, collect:
+- Goal name.
+- Target amount.
+- Desired completion date.
+- Current savings, if any.
+
+Calculate:
+- Remaining amount.
+- Required monthly contribution.
+- Estimated completion date.
+- Whether the goal is achievable with the current allocation.
+
+If the required monthly contribution exceeds the available goal allocation, explain the shortfall and suggest alternatives.
+
+Do not create an unnecessarily complicated goal management system.
+
+---
+
+# 9. TRAVEL FUND PLANNER
+
+Create a dedicated travel fund section.
+
+Users should be able to:
+- Set a travel target.
+- Enter the estimated trip cost.
+- Choose a desired travel date.
+- See the monthly amount required.
+- See how much they will accumulate based on their current allocation.
+- Understand whether the trip is financially feasible.
+
+Example:
+
+Trip target: ₹60,000.
+
+Monthly travel contribution: ₹6,000.
+
+Estimated time required: 10 months, assuming no withdrawals and no interest.
+
+Display a visual progress tracker.
+
+The AI agent should be able to analyse whether the trip is affordable without compromising essentials, emergency savings or important financial goals.
+
+---
+
+# 10. THE MAIN DIFFERENTIATOR: AI FINANCIAL DECISION AGENT
+
+This is the most important feature of SpendSense AI.
+
+Create a dedicated AI assistant with its own navigation tab and a prominent dashboard entry point.
+
+Name it:
+
+**SpendSense AI Agent**
+
+Give it a friendly but intelligent personality. It should feel like a knowledgeable personal financial strategist, not a generic chatbot.
+
+Suggested introduction:
+
+"Hi! I'm your SpendSense AI Financial Agent. Before you make an important financial decision, talk to me. I'll help you understand the costs, benefits, risks and long-term impact on your finances."
+
+### A. Personal financial context
+
+The agent should have access to the user's saved SpendSense profile, including:
+
+- Monthly income.
+- Current category allocations.
+- Monthly essentials budget.
+- Monthly savings allocation.
+- Emergency fund contribution and balance, if supplied.
+- Travel fund contribution and balance.
+- Financial goals.
+- Existing commitments, if supplied.
+- User-defined allocation changes.
+- Previous decision scenarios saved by the user.
+
+The agent must use this information when answering questions.
+
+Do not ask users to repeat information that is already available in their profile.
+
+If information is missing, ask only the relevant follow-up questions.
+
+### B. Real-life financial decision analysis
+
+The user should be able to ask natural-language questions, including:
+
+- "Should I buy a car worth ₹8 lakh?"
+- "Can I afford a new iPhone?"
+- "Should I take a personal loan?"
+- "Should I move to Bangalore?"
+- "Can I afford a ₹40,000 vacation?"
+- "Should I purchase a laptop on EMI?"
+- "Should I increase my savings or travel budget?"
+- "Can I afford to rent a flat for ₹20,000 per month?"
+
+The agent must understand the question and identify the information needed to evaluate it.
+
+For example, for a car purchase, it should request information such as:
+- Car price.
+- Down payment.
+- Loan amount.
+- Interest rate.
+- Loan tenure.
+- Estimated monthly EMI.
+- Fuel and maintenance costs.
+- Existing savings and other commitments, if not already known.
+
+Do not ask all questions at once if the information can be collected conversationally.
+
+If the user does not know the interest rate or other details, allow them to proceed with clearly labelled assumptions or estimates.
+
+### C. Financial decision engine
+
+For every major financial decision, analyse:
+
+1. Affordability: Can the user afford it?
+2. Cash flow: How will it affect monthly disposable income?
+3. Savings impact: Will savings contributions decrease?
+4. Emergency fund impact: Will the user compromise financial security?
+5. Total cost: What is the complete cost, including hidden or recurring expenses?
+6. Opportunity cost: What else could the money achieve?
+7. Long-term impact: How will this affect the user's finances after 1, 3 and 5 years?
+8. Alternatives: Is there a cheaper or more financially sensible option?
+
+For loans and EMIs, calculate the EMI using the correct amortisation formula.
+
+For purchases, distinguish between:
+- One-time purchase cost.
+- Recurring operating costs.
+- Financing costs.
+- Depreciation, where applicable.
+- Potential financial benefits or income generated.
+
+Do not label a purchase as profitable just because the user can afford it.
+
+For assets that depreciate, clearly distinguish practical utility from financial return.
+
+### D. Decision recommendation
+
+The agent should provide a clear recommendation using one of these outcomes:
+
+- **Good Financial Decision**
+- **Affordable, But Consider Waiting**
+- **Risky Financial Decision**
+- **Not Financially Advisable Right Now**
+
+These are decision-support classifications, not absolute judgments.
+
+Every recommendation must include the reasoning behind it.
+
+The agent should never provide a confident recommendation if essential information is missing.
+
+### E. Structured AI decision report
+
+For major financial questions, generate a report with the following sections:
+
+**1. Your Question**
+
+Restate the decision the user is considering.
+
+**2. Financial Overview**
+
+Show the relevant income, allocations, savings and commitments used.
+
+**3. Estimated Financial Impact**
+
+Show the cost, EMI, monthly expenses, one-time expenses and savings impact where relevant.
+
+**4. Benefits**
+
+Explain practical and financial benefits separately.
+
+**5. Risks**
+
+Explain the financial risks and compromises.
+
+**6. Alternative Scenarios**
+
+Compare at least two reasonable alternatives, such as:
+- Buy now.
+- Wait six months.
+- Choose a cheaper option.
+
+**7. Final AI Recommendation**
+
+Show the recommendation and a clear explanation.
+
+**8. Suggested Action Plan**
+
+Give the user practical next steps.
+
+### F. Example: Car purchase
+
+If the user asks:
+
+"Should I buy a car worth ₹8 lakh?"
+
+The AI should analyse the user's existing financial profile.
+
+If necessary, ask about the down payment, loan rate, tenure and expected running costs.
+
+Then calculate:
+- EMI.
+- Total interest.
+- Total ownership cost.
+- Monthly financial commitment.
+- Impact on savings.
+- Impact on emergency fund contributions.
+- Long-term financial projections.
+
+Compare:
+- Buying immediately.
+- Saving for a larger down payment.
+- Waiting and buying later.
+- Choosing a less expensive car.
+
+The final answer should explain whether buying the car makes financial sense for that particular user.
+
+### G. AI agent capabilities
+
+The agent should be able to:
+
+- Understand natural-language questions.
+- Retrieve the user's financial profile.
+- Run financial calculations.
+- Generate and compare scenarios.
+- Explain recommendations.
+- Remember saved financial goals and previous decisions.
+- Suggest improvements to the user's allocation.
+- Create a savings plan for a future purchase.
+- Save decision reports in the user's account.
+- Ask follow-up questions when required.
+
+It must NEVER change the user's financial allocations, goals or saved profile without explicit permission.
+
+---
+
+# 11. AI ACCURACY AND FINANCIAL SAFETY — VERY IMPORTANT
+
+The AI must not simply generate convincing-sounding financial advice.
+
+Implement a hybrid architecture:
+
+**Deterministic Financial Calculation Engine + LLM-Powered AI Agent.**
+
+The Python or backend calculation engine must perform all numerical financial operations.
+
+The LLM should:
+- Understand the user's intent.
+- Identify missing information.
+- Call the relevant calculation functions.
+- Interpret the returned results.
+- Explain the outcome in simple language.
+- Present recommendations based on the calculated evidence.
+
+The LLM must NOT invent:
+- EMI amounts.
+- Interest rates.
+- Savings projections.
+- Investment returns.
+- Tax benefits.
+- Purchase costs.
+- User financial information.
+
+### Calculation functions to implement
+
+Create reusable backend functions for:
+
+1. Income allocation.
+2. Percentage calculation.
+3. Allocation rebalancing.
+4. Annual savings projections.
+5. Emergency fund target calculation.
+6. Emergency fund completion timeline.
+7. Financial goal contribution calculation.
+8. Travel savings projections.
+9. Loan EMI calculation.
+10. Total loan interest calculation.
+11. Monthly affordability analysis.
+12. Purchase affordability analysis.
+13. Scenario comparison.
+14. Future cash-flow projections.
+
+### Accuracy rules
+
+- Use INR throughout the application.
+- Format numbers using Indian number formatting.
+- Show assumptions used in every estimate.
+- Distinguish known information from user-provided estimates and AI assumptions.
+- If the user's information is insufficient, ask for it.
+- Do not fabricate missing data.
+- Do not guarantee investment returns or future financial outcomes.
+- Clearly identify estimates and projections.
+- Do not present the AI as a certified financial adviser.
+- Do not give personalised recommendations to buy or sell specific securities.
+- Treat the agent as an educational financial decision-support assistant.
+
+If an LLM API is unavailable, the core app must still work using deterministic calculations and a basic rule-based assistant.
+
+---
+
+# 12. OPTIONAL FINANCIAL TWIN / WHAT-IF SIMULATOR
+
+Add a simple optional feature called:
+
+**"What If?"**
+
+This should allow users to explore how a financial change might affect their future.
+
+Examples:
+- What if my salary increases by 20%?
+- What if I save ₹5,000 extra every month?
+- What if I spend ₹10,000 on shopping?
+- What if my rent increases by ₹5,000?
+- What if I stop travelling for six months?
+- What if I buy a car on EMI?
+
+Display:
+- Current financial position.
+- Changed financial position.
+- Monthly difference.
+- Annual difference.
+- Goal completion impact.
+
+Keep this interface simple. Do not turn it into a complex financial modelling tool.
+
+---
+
+# 13. NAVIGATION AND APPLICATION STRUCTURE
+
+Use a simple sidebar navigation with these sections:
+
+1. Dashboard
+2. Smart Allocation
+3. Emergency Fund
+4. Financial Goals
+5. Travel Fund
+6. AI Financial Agent
+7. What If? Simulator
+8. Settings
+
+The AI Financial Agent should be visually highlighted because it is the main differentiator.
+
+Do not add unnecessary sections.
+
+---
+
+# 14. TECHNICAL ARCHITECTURE
+
+Build the application using a maintainable architecture.
+
+Preferred stack:
+
+**Frontend**
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Recharts or a similar charting library.
+
+**Backend**
+- Python with FastAPI, or a suitable integrated backend.
+- Pandas and NumPy for financial data processing.
+- Reusable deterministic financial calculation modules.
+
+**Database**
+- SQLite for a local prototype, with a clean upgrade path to PostgreSQL.
+- Store user profile, income, allocation percentages, financial goals, emergency fund details and saved AI decision reports.
+
+**AI**
+- Google Gemini API, using a currently supported Gemini model.
+- Keep API keys in server-side environment variables or AI Studio's supported secure configuration.
+- Never expose API keys in frontend code.
+- Use structured function calling/tool calling for financial calculations.
+- Validate tool inputs and outputs.
+
+Use the simplest reliable architecture that can be generated and run successfully in Google AI Studio.
+
+Do not add unnecessary third-party services.
+
+---
+
+# 15. FUNCTIONAL REQUIREMENTS
+
+The application must support:
+
+- Manual monthly income entry.
+- Automatic percentage-based income allocation.
+- Automatic rupee calculations.
+- Editable allocation percentages.
+- Allocation validation totalling 100%.
+- Dashboard with financial overview.
+- Annual savings projections.
+- Emergency fund planning.
+- Financial goal creation and tracking.
+- Travel fund planning.
+- Conversational AI Financial Agent.
+- Personalised financial decision reports.
+- Loan and purchase affordability calculations.
+- What-if scenario comparison.
+- Saving and revisiting AI decision reports.
+- Editing the user's profile and income.
+- Responsive desktop and mobile layouts.
+- Sample/demo user data.
+
+Do not build bank integration or bank statement upload functionality.
+
+---
+
+# 16. IMPORTANT USER EXPERIENCE DETAILS
+
+The app should be understandable even to someone who knows nothing about financial planning.
+
+Use simple labels and explanations.
+
+Instead of saying "Liquidity Risk", explain:
+
+"You may not have enough easily accessible savings for an unexpected expense."
+
+Instead of saying "Opportunity Cost", explain:
+
+"Here's what else you could do with this money."
+
+Use clear visual indicators:
+- Green for healthy or manageable.
+- Amber for caution.
+- Red for serious affordability concerns.
+
+Do not use colour alone to communicate risk. Include descriptive text.
+
+Include helpful empty states and examples.
+
+Use confirmation before saving major changes.
+
+Keep the main user journey short:
+
+**Enter income → View allocation → Set goals → Ask AI → Make smarter decisions.**
+
+---
+
+# 17. SAMPLE DEMO EXPERIENCE
+
+Create a demo user with:
+
+Monthly income: ₹60,000.
+
+Default illustrative allocation:
+- Essentials: ₹27,000.
+- Emergency Fund: ₹6,000.
+- Savings: ₹12,000.
+- Travel Fund: ₹6,000.
+- Financial Goals: ₹3,000.
+- Lifestyle: ₹6,000.
+
+Show the user a working dashboard using this sample data.
+
+Add suggested AI questions as clickable prompts:
+
+- "Can I afford a new phone?"
+- "Should I buy a car?"
+- "How much will I save in one year?"
+- "Can I afford a ₹50,000 trip?"
+- "How can I improve my allocation?"
+
+When a demo prompt is clicked, the AI should use the demo user's profile and produce an actual calculation-based response.
+
+Clearly label the profile as sample/demo data.
+
+---
+
+# 18. FINAL BUILD INSTRUCTIONS
+
+Build the complete working application, not just a static landing page or a visual mockup.
+
+Prioritise the following:
+
+1. A working income input and allocation engine.
+2. A polished and functional dashboard.
+3. A working AI Financial Decision Agent.
+4. Reliable financial calculation functions.
+5. Functional emergency fund, savings, travel and goal sections.
+6. A simple What-If simulator.
+7. Responsive design.
+
+Every visible button should perform its intended action.
+
+All financial amounts and charts must update when the user changes their income or allocations.
+
+Persist user data appropriately. Do not lose the user's information when they refresh the application.
+
+Implement sensible input validation, loading states, error handling and empty states.
+
+If a feature cannot be fully implemented, do not create a fake working button. Clearly indicate the limitation and provide a functional fallback where possible.
+
+Do not fabricate live integrations or claim that the app is connected to a bank.
+
+Make the application feel like a real, polished fintech product that could be presented as a serious startup prototype.
+
+**FINAL PRODUCT VISION:**
+
+SpendSense AI should answer two important questions:
+
+1. "I earn this much money. How should I divide it?"
+2. "I am thinking of making this financial decision. Is it actually a good idea for me?"
+
+The first is solved by the Smart Allocation Engine.
+
+The second is solved by the AI Financial Decision Agent.
+
+The second capability is the heart of the product and must receive the most attention in the design and implementation.

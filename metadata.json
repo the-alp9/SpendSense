@@ -1,0 +1,6 @@
+{
+  "name": "SpendSense AI",
+  "description": "Intelligent personal financial planning and decision-making platform for smart money allocation, savings targets, and confident financial decisions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
